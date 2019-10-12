@@ -1,0 +1,170 @@
+:root {
+  --F : 'Courier New', Courier, monospace;
+}
+
+body {
+  margin-left: 0;
+  margin-top:0;
+  height:150vh;
+  background: linear-gradient(to top, rgb(153, 142, 130), white);
+}
+
+.comment {
+  background: linear-gradient(to bottom, rgb(153, 142, 130), white);
+  width:100vw;
+  font-family: var(--F);
+  font-size:0.8em;
+  text-align:left;
+  box-sizing: border-box;
+  padding:50px;
+  color:rgb(32, 40, 44);
+}
+
+b {
+  font-size:1.2em;
+}
+
+#main-wrapper {
+  width:100vw;
+  background: linear-gradient(to top right, rgb(176, 211, 208), rgb(134, 156, 167));
+  display: flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  margin: 0 auto;
+  font-family: var(--F);
+  box-shadow: 0 1px 2px 1px rgb(32, 40, 44);
+}
+
+#main-wrapper table {
+  margin: 0 auto;
+}
+
+.table-title {
+  background: rgb(69, 86, 95);
+  color: white;
+  text-align:center;
+  font-size:1em;
+  border-radius:100px;
+}
+
+.test-td-data{
+  font-weight: bold;
+  color: rgb(46, 57, 63);
+}
+
+table {
+  margin:0 auto;
+  font-family: var(--F);
+}
+
+td {
+  width:100px;
+  border:1px solid rgb(176, 211, 208);
+  font-size: 0.8em;
+  text-align:right;
+  border-radius:2px;
+}
+
+.btn-wrapper{
+  width:100vw;
+  display:grid;
+  grid-template-columns: repeat(1,1fr);
+  box-sizing: border-box;
+  margin:0 auto;
+}
+
+#sort-rev,
+#sort-by-name,
+#btn-clear-data,
+#btn-clear-name,
+#get-total {
+  margin:0 auto;
+  height:30px;
+  width:100px;
+  background: rgb(46, 57, 63);
+  opacity:0.75;
+  color: white;
+  font-family: var(--F);
+  font-size:0.7em;
+  transition: opacity 0.3s;
+  cursor: pointer;
+  border-radius:2px;
+  border:none;
+  box-shadow: 0 1px 2px 1px rgb(32, 40, 44);
+}
+
+#sort-rev:hover,
+#sort-by-name:hover,
+#btn-clear-name:hover,
+#btn-clear-data:hover,
+#get-total:hover {
+  opacity:1;
+  transition: opacity 0.3s;
+}
+
+#sort-res {
+  box-sizing: border-box;
+  padding:5px;
+  display: block;
+  margin: 0 auto;
+  width:100px;
+  background:white;
+  box-shadow: 0 1px 3px 2px rgb(32, 40, 44) inset;
+}
+
+.results {
+  box-sizing: border-box;
+  padding-top:30px;
+  margin:0 auto;
+  font-family: var(--F);
+  text-align:center;
+
+}
+
+#sort-rev-res,
+#sort-name-res {
+  margin:0 auto;
+  width:90vw;
+  text-align:center;
+}
+
+#graph{
+  margin:0 auto;
+  background: transparent;
+  border-radius: 2px;
+  display: flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+}
+
+.graph-div {
+  background: linear-gradient(to top, rgb(136, 156, 167), rgb(69, 86, 95));
+  border: 1px solid white;
+  align-self:flex-end;
+  margin-bottom:2px;
+  color:white;
+  text-align:center;
+  font-size:0.6em;
+}
+
+.graph-div-p {
+  margin-top: -30px;
+  font-size: 0.9em;
+  color: rgb(32, 40, 44);
+}
+
+/*SVG CHART*/
+#svg-chart {
+  height: 250px;
+  width: 90vw;
+  background: white;
+  margin: 0 auto;
+}
+
+.path{
+  fill:none;
+  stroke:black;
+  stroke-width:2px;
+}

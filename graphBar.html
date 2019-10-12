@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" type="text/css" href="css/graphBar.css">
+  <title>Document</title>
+</head>
+<body>
+    <div class="comment"><b>G</b>iven below data is provided by the server upon request, this snippet:<br>
+      <ul>
+        <li>sorts data by size</li>
+        <li>displays a graph width sorted information</li>
+      </ul>
+
+    </div>
+  <div id="main-wrapper">
+    <!--displaying a fake table to test data analysis-->
+
+    <table>
+      <tr>
+        <td class="table-title"><b>n</b>ame</td>
+        <td class="table-title"><b>m</b>onth</td>
+        <td class="table-title"><b>d</b>ata</td>
+      </tr>
+      <tr>
+        <td class="test-td-name">Etab. 0</td>
+        <td class="test-td-month">1</td>
+        <td class="test-td-data">19250</td>
+      </tr>
+      <tr>
+        <td class="test-td-name">Etab. 1</td>
+        <td class="test-td-month">3</td>
+        <td class="test-td-data">12450</td>
+      </tr>
+      <tr>
+        <td class="test-td-name">Etab. 2</td>
+        <td class="test-td-month">2</td>
+        <td class="test-td-data">17654</td>
+      </tr>
+      <tr>
+        <td class="test-td-name">Etab. 0</td>
+        <td class="test-td-month">4</td>
+        <td class="test-td-data">18765</td>
+      </tr>
+      <tr>
+        <td class="test-td-name">Etab. 1</td>
+        <td class="test-td-month">6</td>
+        <td class="test-td-data">13456</td>
+      </tr>
+      <tr>
+        <td class="test-td-name">Etab. 2</td>
+        <td class="test-td-month">5</td>
+        <td class="test-td-data">18765</td>
+      </tr>
+      <tr>
+        <td class="test-td-name">Etab. 0</td>
+        <td class="test-td-month">9</td>
+        <td class="test-td-data">9250</td>
+      </tr>
+      <tr>
+        <td class="test-td-name">Etab. 1</td>
+        <td class="test-td-month">7</td>
+        <td class="test-td-data">21400</td>
+      </tr>
+      <tr>
+        <td class="test-td-name">Etab. 2</td>
+        <td class="test-td-month">8</td>
+        <td class="test-td-data">1250</td>
+      </tr>
+      
+      
+    </table>
+
+  </div>
+
+  <div class="results">
+    <div class="btn-wrapper">
+        <button id="sort-rev"><b>s</b>ort data</button>
+        <button id="btn-clear-data"><b>c</b>lear</button>
+        <br>
+    </div>
+    <div id="sort-rev-res"></div>
+    <div id="graph"></div>
+    <br><br>
+    <div class="btn-wrapper">
+      <button id="get-total"><b>g</b>et total</button>
+      <br>
+  </div>
+    <div id="graph2"></div> 
+  </div>
+  
+  <script src="js/graphBar.js"></script>
+</body>
+</html>
