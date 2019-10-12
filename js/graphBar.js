@@ -1,8 +1,10 @@
-//takes data from table, sorts by rev and displays a bar chart
+//takes data from table, sorts by revenue and displays a bar chart
+
 function chartBar(x, y, a, prop, out, btn, cl, gr, btnT, gr2){
-  let arrayRev = document.getElementsByClassName(x);
-  let arrayName = document.getElementsByClassName(y);
-  let arraymonth = document.getElementsByClassName(a);
+  let arrayRev = document.getElementsByClassName(x),
+      arrayName = document.getElementsByClassName(y),
+      arraymonth = document.getElementsByClassName(a);
+  
   let output = document.getElementById(out);
   let button = document.getElementById(btn);
   let clear = document.getElementById(cl);
@@ -15,29 +17,30 @@ function chartBar(x, y, a, prop, out, btn, cl, gr, btnT, gr2){
   let months;
   let names;
 
-  let arrayData = [];
-  let arrayNames = [];
-  let arraymonths = [];
-  let arrayPairs = [];
+  let arrayData = [],
+      arrayNames = [],
+      arraymonths = [],
+      arrayPairs = [];
+  
   let dataPack = {}; //my first object
   let graph = document.getElementById(gr);
   let proportion = prop;
 
-  let etab0 = "Etab. 0";
-  let etab1 = "Etab. 1";
-  let etab2 = "Etab. 2";
+  let etab0 = "Etab. 0",
+      etab1 = "Etab. 1",
+      etab2 = "Etab. 2";
 
-  let etab0_arr =[];
-  let etab1_arr =[];
-  let etab2_arr =[];
+  let etab0_arr =[],
+      etab1_arr =[],
+      etab2_arr =[];
 
-  let etab0_tot;
-  let etab1_tot;
-  let etab2_tot;
+  let etab0_tot,
+      etab1_tot,
+      etab2_tot;
 
-  let etab0_name;
-  let etab1_name;
-  let etab2_name;
+  let etab0_name,
+      etab1_name,
+      etab2_name;
 
 //fill an array with objects containing name and data
 //this loop serves for both sorting and totalizing purposes later endeavoured
@@ -86,13 +89,13 @@ function chartBar(x, y, a, prop, out, btn, cl, gr, btnT, gr2){
 
   button.addEventListener("click", function() {
     for (i = 0; i < arrayPairs.length; i += 1){
-      let tr = document.createElement("TR");
-      let td0 = document.createElement("TD");
-      let td1 = document.createElement("TD");
-      let td2 = document.createElement("TD");
-      let table = document.createElement("TABLE");
-      let graphElement = document.createElement("DIV");
-      let parag = document.createElement("P");
+      let tr = document.createElement("TR"),
+          td0 = document.createElement("TD"),
+          td1 = document.createElement("TD"),
+          td2 = document.createElement("TD"),
+          table = document.createElement("TABLE"),
+          graphElement = document.createElement("DIV"),
+          parag = document.createElement("P");
       td0.innerHTML = arrayPairs[i].name;
       td1.innerHTML = arrayPairs[i].data;
       td2.innerHTML = arrayPairs[i].month;
@@ -135,16 +138,16 @@ function chartBar(x, y, a, prop, out, btn, cl, gr, btnT, gr2){
 
   //Event for totals
   buttonTotal.addEventListener("click", function(){
-    let tr0 = document.createElement("TR");
-    let tr1 = document.createElement("TR");
-    let tr2= document.createElement("TR");
-    let td0_0 = document.createElement("TD");
-    let td0_1 = document.createElement("TD");
-    let td1_0 = document.createElement("TD");
-    let td1_1 = document.createElement("TD");
-    let td2_0 = document.createElement("TD");
-    let td2_1 = document.createElement("TD");
-    let table = document.createElement("TABLE");
+    let tr0 = document.createElement("TR"),
+        tr1 = document.createElement("TR"),
+        tr2= document.createElement("TR"),
+        td0_0 = document.createElement("TD"),
+        td0_1 = document.createElement("TD"),
+        td1_0 = document.createElement("TD"),
+        td1_1 = document.createElement("TD"),
+        td2_0 = document.createElement("TD"),
+        td2_1 = document.createElement("TD"),
+        table = document.createElement("TABLE");
     td0_0.innerHTML = etab0_name;
     td0_1.innerHTML = etab0_tot;
     td1_0.innerHTML = etab1_name;
@@ -165,7 +168,8 @@ function chartBar(x, y, a, prop, out, btn, cl, gr, btnT, gr2){
 
 }
 
-chartBar("test-td-data",
+chartBar(
+       "test-td-data",
        "test-td-name",
        "test-td-month",
        150,
@@ -174,5 +178,6 @@ chartBar("test-td-data",
        "btn-clear-data",
        "graph",
        "get-total",
-       "graph2");
+       "graph2"
+);
 
