@@ -154,17 +154,3 @@ td {
   font-size: 0.9em;
   color: rgb(32, 40, 44);
 }
-
-/*SVG CHART*/
-#svg-chart {
-  height: 250px;
-  width: 90vw;
-  background: white;
-  margin: 0 auto;
-}
-
-.path{
-  fill:none;
-  stroke:black;
-  stroke-width:2px;
-}
