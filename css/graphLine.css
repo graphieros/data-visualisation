@@ -76,7 +76,7 @@ td {
 
 #btn-process,
 #sort-by-name,
-#btn-clear-data,
+#btn-clear,
 #btn-clear-name,
 #get-total {
   margin:0 auto;
@@ -97,7 +97,7 @@ td {
 #btn-process:hover,
 #sort-by-name:hover,
 #btn-clear-name:hover,
-#btn-clear-data:hover,
+#btn-clear:hover,
 #get-total:hover {
   opacity:1;
   transition: opacity 0.3s;
@@ -160,10 +160,9 @@ svg.svg{
   background: linear-gradient(to top, transparent, white);
   border:1px solid white;
   margin: 0 auto;
+  display: none;
 }
 
 .line-path{
   fill:black;
-  stroke:black;
-  stroke-width:2px;
 }
