@@ -1,4 +1,8 @@
 # nowIsFine
 
-I'm learning js without using frameworks for now.
-For the moment I'm into data visualization. I searched online for help on how to build charts using pure js, but didn't find anything to my satisfaction, so I'm trying to make it on my own. I think trying to reinvent the wheel is cool, because you get to understand what a wheel really is. Mistakes are awesome.
+GraphBar.js
+> manipulates height of divs depending on data sorted from a HTML table. It displays a bar chart sorted from smallest to highest value.
+
+GraphLine.js
+> creates a line chart using SVG coordinates based on data from a HTML table
+> here data is not sorted by value as it must represent historic evolution
