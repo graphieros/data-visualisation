@@ -3,7 +3,7 @@ function sortStoreOutput(btnP, n, m, d, svg0, svg1){
     names = document.getElementsByClassName(n),
     months = document.getElementsByClassName(m),
     datas = document.getElementsByClassName(d),
-    output0 = document.getElementById(svg0);
+    output0 = document.getElementById(svg0),
     output1 = document.getElementById(svg1);
 
   let arrayNames = [
@@ -15,14 +15,14 @@ function sortStoreOutput(btnP, n, m, d, svg0, svg1){
   let maxValue;
 
   let obj = {};
-  let arrayObj = [];
-  let arrayObj0 = [],
-       arrayObj1 = [];
+  let arrayObj = [],
+      arrayObj0 = [],
+      arrayObj1 = [];
   let sortedData0 = [],
-       sortedData1 = [];     
+      sortedData1 = [];     
   let i;
   let check0 = document.getElementById("checkEtab0"),
-       check1 = document.getElementById("checkEtab1");
+      check1 = document.getElementById("checkEtab1");
 
   // create an object to take all the data from the table and push it in an array of objects
   for (i = 0; i < datas.length; i += 1){
@@ -68,10 +68,9 @@ function sortStoreOutput(btnP, n, m, d, svg0, svg1){
   // console.log(sortedData1[0]);
 
   btnProcess.addEventListener("click", function(){
-
     let i;
     let space0 = 0,
-         space1 = 0;
+        space1 = 0;
     let nextMonthIncrement = 33;     
   
     for (i = 0; i < sortedData0.length; i += 1){
@@ -79,19 +78,18 @@ function sortStoreOutput(btnP, n, m, d, svg0, svg1){
       circle.setAttribute("r", "2");
       circle.setAttribute("fill", "red");
       circle.setAttribute("cx", space0 + nextMonthIncrement);
-      circle.setAttribute("cy", 100 - ((sortedData0[i] /maxValue) * 100 - 10));
+      circle.setAttribute("cy", 100 - ((sortedData0[i] / maxValue) * 100 - 10));
       output0.appendChild(circle);
       space0 += nextMonthIncrement;
 
       let path = document.createElementNS("http://www.w3.org/2000/svg", "path");
-
-      let plot0 = 110 - ((sortedData0[i]/maxValue)*100);
+      let plot0 = 110 - ((sortedData0[i] / maxValue) * 100);
       let plot1 = function p(){
         if (isNaN(sortedData0[i+1])){
           path.setAttribute("stroke", "none");
           return "L" + "0" + " " + "0";
         }else{
-          return "L" + (space0 + nextMonthIncrement) + " " + (100 - ((sortedData0[i+1]/maxValue)*100 - 10)) ;
+          return "L" + (space0 + nextMonthIncrement) + " " + (100 - ((sortedData0[i+1] / maxValue) * 100 - 10)) ;
         }
       }
       path.setAttribute("stroke", "rgba(158, 76, 76, 0.788)");
@@ -105,29 +103,27 @@ function sortStoreOutput(btnP, n, m, d, svg0, svg1){
       circle.setAttribute("r", "2");
       circle.setAttribute("fill", "blue");
       circle.setAttribute("cx", space1 + nextMonthIncrement);
-      circle.setAttribute("cy", 100 - ((sortedData1[i] /maxValue) * 100 - 10));
+      circle.setAttribute("cy", 100 - ((sortedData1[i] / maxValue) * 100 - 10));
       output1.appendChild(circle);
       space1 += nextMonthIncrement;
 
       let path = document.createElementNS("http://www.w3.org/2000/svg", "path");
 
-      let plot0 = 110 - ((sortedData1[i]/maxValue)*100);
+      let plot0 = 110 - ((sortedData1[i] / maxValue) * 100);
       let plot1 = function p(){
         if (isNaN(sortedData1[i+1])){
           path.setAttribute("stroke", "none");
           return "L" + "0" + " " + "0";
         }else{
-          return "L" + (space1 + nextMonthIncrement) + " " + (100 - ((sortedData1[i+1]/maxValue)*100 - 10)) ;
+          return "L" + (space1 + nextMonthIncrement) + " " + (100 - ((sortedData1[i+1] / maxValue) * 100 - 10)) ;
         }
       }
-
       path.setAttribute("stroke", "rgba(76, 114, 158, 0.788)");
       path.setAttribute("stroke-width", "1.5");
       path.setAttribute("d", "M" + space1 + " " + plot0 + " " + plot1());
       output1.appendChild(path);
     }
-  })
-
+  });
 }
 
 sortStoreOutput(
@@ -142,7 +138,6 @@ sortStoreOutput(
 function selectView(chk, svgTog){
   let check = document.getElementById(chk);
   let svgToggle = document.getElementById(svgTog);
-
   check.addEventListener("click", function(){
     if (check.checked === true){
       svgToggle.style.opacity = 1;
