@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" type="text/css" href="css/sortGraphLine.css">
+  <title>Document</title>
+</head>
+<body>
+
+  <HEADER>
+    <ul>
+      <li>Sort data by name, month</li>
+      <li>Store results in objects</li>
+      <li>Output charts using SVG</li>
+    </ul>
+  </HEADER>
+
+  <section class="table">
+    <table id="dataTable">
+      <tr>
+        <td class="tdTitle"><b>N</b>ame</td>
+        <td class="tdTitle"><b>M</b>onth</td>
+        <td class="tdTitle"><b>D</b>ata</td>
+      </tr>
+      <tr>
+        <td class="tdName">name0</td>
+        <td class="tdMonth">1</td>
+        <td class="tdData">0.1</td>
+      </tr>
+      <tr>
+        <td class="tdName">name1</td>
+        <td class="tdMonth">1</td>
+        <td class="tdData">0.11</td>
+      </tr>
+      <tr>
+        <td class="tdName">name1</td>
+        <td class="tdMonth">2</td>
+        <td class="tdData">0.19</td>
+      </tr>
+      <tr>
+        <td class="tdName">name0</td>
+        <td class="tdMonth">3</td>
+        <td class="tdData">0.16</td>
+      </tr>
+      <tr>
+        <td class="tdName">name0</td>
+        <td class="tdMonth">4</td>
+        <td class="tdData">0.23</td>
+      </tr>
+      <tr>
+        <td class="tdName">name1</td>
+        <td class="tdMonth">4</td>
+        <td class="tdData">0.25</td>
+      </tr>
+      <tr>
+        <td class="tdName">name0</td>
+        <td class="tdMonth">2</td>
+        <td class="tdData">0.22</td>
+      </tr>
+      <tr>
+        <td class="tdName">name1</td>
+        <td class="tdMonth">3</td>
+        <td class="tdData">0.21</td>
+      </tr>
+      <tr>
+        <td class="tdName">name0</td>
+        <td class="tdMonth">5</td>
+        <td class="tdData">0.54</td>
+      </tr>
+      <tr>
+        <td class="tdName">name1</td>
+        <td class="tdMonth">5</td>
+        <td class="tdData">0.12</td>
+      </tr>
+      <tr>
+        <td class="tdName">name0</td>
+        <td class="tdMonth">6</td>
+        <td class="tdData">0.43</td>
+      </tr>
+      <tr>
+        <td class="tdName">name1</td>
+        <td class="tdMonth">6</td>
+        <td class="tdData">0.25</td>
+      </tr>
+      
+    </table>
+  </section>
+
+  <br>
+  <button id="processButton" class="btn"><b>P</b>rocess</button>
+  <br>
+  <br>
+
+  <section id="result" class="result">
+    <span class="checkTitles">Etab0:</span><input type ="checkbox" id="checkEtab0" checked><br>
+    <span class="checkTitles">Etab1:</span><input type ="checkbox" id="checkEtab1" checked><br>
+    <svg class="svgBase"></svg>
+    <svg class="svg" id="svg0"></svg>
+    <svg class="svg" id="svg1"></svg>
+  </section>
+  
+  <script src="js/sortGraphLine.js"></script>
+</body>
+</html>
