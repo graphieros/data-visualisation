@@ -71,25 +71,27 @@ function sortStoreOutput(btnP, n, m, d, svg0, svg1){
     let i;
     let space0 = 0,
         space1 = 0;
-    let nextMonthIncrement = 33;     
+    let scale = 150;
+    let nextMonthIncrement = 33;   
+    let adjust = 25;  
   
     for (i = 0; i < sortedData0.length; i += 1){
       let circle = document.createElementNS("http://www.w3.org/2000/svg", "circle");
       circle.setAttribute("r", "2");
       circle.setAttribute("fill", "red");
       circle.setAttribute("cx", space0 + nextMonthIncrement);
-      circle.setAttribute("cy", 100 - ((sortedData0[i] / maxValue) * 100 - 10));
+      circle.setAttribute("cy", scale - ((sortedData0[i] / maxValue) * scale - adjust));
       output0.appendChild(circle);
       space0 += nextMonthIncrement;
 
       let path = document.createElementNS("http://www.w3.org/2000/svg", "path");
-      let plot0 = 110 - ((sortedData0[i] / maxValue) * 100);
+      let plot0 = adjust + scale - ((sortedData0[i] / maxValue) * scale);
       let plot1 = function p(){
         if (isNaN(sortedData0[i+1])){
           path.setAttribute("stroke", "none");
           return "L" + "0" + " " + "0";
         }else{
-          return "L" + (space0 + nextMonthIncrement) + " " + (100 - ((sortedData0[i+1] / maxValue) * 100 - 10)) ;
+          return "L" + (space0 + nextMonthIncrement) + " " + (scale - ((sortedData0[i+1] / maxValue) * scale - adjust)) ;
         }
       }
       path.setAttribute("stroke", "rgba(158, 76, 76, 0.788)");
@@ -103,19 +105,19 @@ function sortStoreOutput(btnP, n, m, d, svg0, svg1){
       circle.setAttribute("r", "2");
       circle.setAttribute("fill", "blue");
       circle.setAttribute("cx", space1 + nextMonthIncrement);
-      circle.setAttribute("cy", 100 - ((sortedData1[i] / maxValue) * 100 - 10));
+      circle.setAttribute("cy", scale - ((sortedData1[i] / maxValue) * scale - adjust));
       output1.appendChild(circle);
       space1 += nextMonthIncrement;
 
       let path = document.createElementNS("http://www.w3.org/2000/svg", "path");
 
-      let plot0 = 110 - ((sortedData1[i] / maxValue) * 100);
+      let plot0 = adjust + scale - ((sortedData1[i] / maxValue) * scale);
       let plot1 = function p(){
         if (isNaN(sortedData1[i+1])){
           path.setAttribute("stroke", "none");
           return "L" + "0" + " " + "0";
         }else{
-          return "L" + (space1 + nextMonthIncrement) + " " + (100 - ((sortedData1[i+1] / maxValue) * 100 - 10)) ;
+          return "L" + (space1 + nextMonthIncrement) + " " + (scale - ((sortedData1[i+1] / maxValue) * scale - adjust)) ;
         }
       }
       path.setAttribute("stroke", "rgba(76, 114, 158, 0.788)");
