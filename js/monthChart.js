@@ -104,7 +104,7 @@ function generateData(b, cY, pY, cR){
       ctx.font = "50px Arial";
       ctx.fillStyle = "rgb(150,150,150)";
       ctx.fillText(months[i], k - 100, 1300);
-      k += (canvas.width - 70) / 12;
+      k += (canvas.width - 70) / months.length;
   }
 
   //display data on the chart
@@ -112,21 +112,24 @@ function generateData(b, cY, pY, cR){
   function draw(input, color) {
     let k2 = (canvas.width) / months.length;
     let adjust = 45;
+    let lessHeight = 0.8;
+    let topSpace = 20;
+    
     for (i = 0; i < input.length; i += 1) {
-        let h = (1 - (input[i]/ maxValue)) * (canvas.height*0.8)+20;
+        let h = (1 - (input[i]/ maxValue)) * (canvas.height * lessHeight) + topSpace;
         let h2;
         if (input[i + 1] !== undefined) {
-            h2 = (1 - (input[i + 1] / maxValue)) * (canvas.height*0.8)+20;
+            h2 = (1 - (input[i + 1] / maxValue)) * (canvas.height * lessHeight) + topSpace;
             ctx.beginPath();
             ctx.arc(k2 - adjust, h, 8, 0, 2 * Math.PI);
             ctx.lineWidth = 5;
             ctx.strokeStyle = color;
             ctx.moveTo(k2 - adjust, h);
-            ctx.lineTo(k2 - adjust + ((canvas.width - adjust) / months.length), h2);
+            ctx.lineTo(k2 - adjust + ((canvas.width) / months.length), h2);
             ctx.fillStyle = color;
             ctx.fill();
             ctx.stroke();
-            k2 += (canvas.width - adjust) / months.length;
+            k2 += (canvas.width) / months.length;
         } else {
             h2 = 0;
             ctx.beginPath();
