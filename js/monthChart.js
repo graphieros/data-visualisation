@@ -144,6 +144,31 @@ function generateData(b, cY, pY, cR){
 draw(currentDataSet, "rgb(46, 65, 70)");
 draw(previousDataSet, "rgb(252,102,3)");
 
+//display n vs n-1 monthly evolution
+let sortedRatios = [];
+for (i = 0; i < months.length; i += 1) {
+    let ratio;
+    if (previousDataSet.length !== 0) {
+        ratio = Math.round(((currentDataSet[i] / previousDataSet[i]) - 1) * 1000) / 10;
+        sortedRatios.push(ratio);
+    } else {
+        ratio = 0;
+        sortedRatios.push(ratio);
+    }
+}
+
+let k3 = (canvas.width) / months.length;
+for (i = 0; i < months.length; i += 1) {
+    ctx.font = "30px Arial";
+    if (sortedRatios[i] < 0) {
+        ctx.fillStyle = "red";
+    } else {
+        ctx.fillStyle = "green";
+    }
+    ctx.fillText(sortedRatios[i] + "%", k3 - 100, 1200);
+    k3 += (canvas.width - 40) / months.length;
+}
+
   })
 }
 
