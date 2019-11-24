@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" type="text/css" href="css/monthChart.css">
+  <link href="https://fonts.googleapis.com/css?family=Roboto+Mono&display=swap" rel="stylesheet">
+  <title>Document</title>
+</head>
+<body>
+
+  <h1 class="generic">Monthly chart</h1>
+  <section class="dataGeneration">
+    <button id="generateData">generate data</button>
+  </section>
+
+  <section class="dataModule">
+    <div id="currentYear">
+        <p class="month">month</p>
+        <p class="data">data</p>
+    </div>
+      
+    <div id="previousYear">
+        <p class="month">month</p>
+        <p class="data">data</p>
+    </div>
+
+    <canvas id="chartRender" width="2000"></canvas>
+    
+  </section>
+  <script src="js/monthChart.js"></script>
+</body>
+</html>
