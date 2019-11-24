@@ -111,10 +111,10 @@ function generateData(b, cY, pY, cR){
 
   function draw(input, color) {
     let k2 = (canvas.width) / months.length;
-    let adjust = 45;
+    let adjust = 50;
     let lessHeight = 0.8;
     let topSpace = 20;
-    
+
     for (i = 0; i < input.length; i += 1) {
         let h = (1 - (input[i]/ maxValue)) * (canvas.height * lessHeight) + topSpace;
         let h2;
@@ -125,11 +125,11 @@ function generateData(b, cY, pY, cR){
             ctx.lineWidth = 5;
             ctx.strokeStyle = color;
             ctx.moveTo(k2 - adjust, h);
-            ctx.lineTo(k2 - adjust + ((canvas.width) / months.length), h2);
+            ctx.lineTo(k2 - adjust + ((canvas.width - adjust) / months.length), h2);
             ctx.fillStyle = color;
             ctx.fill();
             ctx.stroke();
-            k2 += (canvas.width) / months.length;
+            k2 += (canvas.width - adjust) / months.length;
         } else {
             h2 = 0;
             ctx.beginPath();
@@ -147,10 +147,12 @@ function generateData(b, cY, pY, cR){
 draw(currentDataSet, "rgb(46, 65, 70)");
 draw(previousDataSet, "rgb(252,102,3)");
 
+
+
 //display n vs n-1 monthly evolution
 let sortedRatios = [];
 for (i = 0; i < months.length; i += 1) {
-    let ratio;
+    let ratio = 0;
     if (previousDataSet.length !== 0) {
         ratio = Math.round(((currentDataSet[i] / previousDataSet[i]) - 1) * 1000) / 10;
         sortedRatios.push(ratio);
