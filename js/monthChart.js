@@ -36,6 +36,8 @@ function generateData(b, cY, pY, cR){
     let averageP = 0;
     let sumC = 0;
     let sumP = 0;
+    let progression;
+    let progressionExpressed;
 
     function applyGeneration(t, r, s, c){
       for(i = 0; i < months.length; i += 1){
@@ -73,8 +75,11 @@ function generateData(b, cY, pY, cR){
       }
     }());
 
-    averageC = sumC / months.length;
-    averageP = sumP / months.length;
+    averageC = Math.round(sumC / months.length);
+    averageP = Math.round(sumP / months.length);
+
+    progression = Math.round(((averageC / averageP)-1)*1000)/10;
+    progressionExpressed = progression + "%";
 
     let currentCollection = document.getElementsByClassName("dataC");
     let previousCollection = document.getElementsByClassName("dataP");
@@ -103,15 +108,18 @@ function generateData(b, cY, pY, cR){
     ctx.stroke();
 
 
-    //draw lines for averages
+    //draw lines for averages and display figures on the lines
     ctx.beginPath();
     ctx.lineWidth = 2;
     ctx.setLineDash([10, 10]);
-    let avgLineC = (1-(averageC / maxValue)) * (canvas.height*0.8) +20;
+    let avgLineC = Math.round((1-(averageC / maxValue)) * (canvas.height*0.8)) +20;
     ctx.moveTo(20, avgLineC);
     ctx.lineTo(1980, avgLineC);
     ctx.strokeStyle = "rgba(46, 65, 70, 0.75)";
     ctx.stroke();
+    ctx.font = "30px Arial";
+    ctx.fillStyle = "rgb(46,65,70)";
+    ctx.fillText("Avg. N: " + averageC, 1790, avgLineC);
 
     ctx.beginPath();
     let avgLineP = (1-(averageP / maxValue)) * (canvas.height*0.8) +20;
@@ -119,6 +127,9 @@ function generateData(b, cY, pY, cR){
     ctx.lineTo(1980, avgLineP);
     ctx.strokeStyle = "rgba(252,102,3, 0.75)";
     ctx.stroke();
+    ctx.font = "30px Arial";
+    ctx.fillStyle = "rgb(252, 102, 3)";
+    ctx.fillText("Avg. N-1: " + averageP, 20, avgLineP);
 
 
     for (i = k; i < 2000; i += 1) {
@@ -206,6 +217,14 @@ for (i = 0; i < months.length; i += 1) {
     ctx.fillText(sortedRatios[i] + "%", k3 - 100, 1200);
     k3 += (canvas.width - 40) / months.length;
 }
+
+ctx.font = "50px Arial";
+if(progression < 0){
+  ctx.fillStyle ="red";
+}else{
+  ctx.fillStyle = "green";
+}
+ctx.fillText("Progression N vs N-1: " + progressionExpressed, 40, 40);
 
   })
 }
