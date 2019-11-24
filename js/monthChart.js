@@ -32,6 +32,10 @@ function generateData(b, cY, pY, cR){
     let previousDataSet = [];
     let allValues = [];
     let maxValue;
+    let averageC = 0;
+    let averageP = 0;
+    let sumC = 0;
+    let sumP = 0;
 
     function applyGeneration(t, r, s, c){
       for(i = 0; i < months.length; i += 1){
@@ -60,8 +64,17 @@ function generateData(b, cY, pY, cR){
 
     applyGeneration(tableCurrentYear, random0, currentDataSet, "dataC");
     applyGeneration(tablePreviousYear, random1, previousDataSet, "dataP");
-
     maxValue = Math.max(...allValues);
+
+    (function getSum(){
+      for(i = 0; i < months.length; i += 1){
+        sumC += currentDataSet[i];
+        sumP += previousDataSet[i];
+      }
+    }());
+
+    averageC = sumC / months.length;
+    averageP = sumP / months.length;
 
     let currentCollection = document.getElementsByClassName("dataC");
     let previousCollection = document.getElementsByClassName("dataP");
@@ -89,7 +102,27 @@ function generateData(b, cY, pY, cR){
     ctx.strokeStyle = "rgb(10,10,10)";
     ctx.stroke();
 
+
+    //draw lines for averages
+    ctx.beginPath();
+    ctx.lineWidth = 2;
+    ctx.setLineDash([10, 10]);
+    let avgLineC = (1-(averageC / maxValue)) * (canvas.height*0.8) +20;
+    ctx.moveTo(20, avgLineC);
+    ctx.lineTo(1980, avgLineC);
+    ctx.strokeStyle = "rgba(46, 65, 70, 0.75)";
+    ctx.stroke();
+
+    ctx.beginPath();
+    let avgLineP = (1-(averageP / maxValue)) * (canvas.height*0.8) +20;
+    ctx.moveTo(20,avgLineP);
+    ctx.lineTo(1980, avgLineP);
+    ctx.strokeStyle = "rgba(252,102,3, 0.75)";
+    ctx.stroke();
+
+
     for (i = k; i < 2000; i += 1) {
+      ctx.setLineDash([0,0]);
       ctx.lineWidth = 1;
       ctx.beginPath();
       ctx.moveTo(i + 20, 20);
