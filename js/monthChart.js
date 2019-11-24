@@ -108,7 +108,7 @@ function generateData(b, cY, pY, cR){
     ctx.stroke();
 
 
-    //draw lines for averages and display figures on the lines
+    //draw lines for averages
     ctx.beginPath();
     ctx.lineWidth = 2;
     ctx.setLineDash([10, 10]);
@@ -217,6 +217,11 @@ for (i = 0; i < months.length; i += 1) {
     ctx.fillText(sortedRatios[i] + "%", k3 - 100, 1200);
     k3 += (canvas.width - 40) / months.length;
 }
+
+ctx.beginPath();
+ctx.fillStyle="white";
+ctx.fillRect(20,0, 700, 50);
+ctx.stroke();
 
 ctx.font = "50px Arial";
 if(progression < 0){
