@@ -76,7 +76,7 @@ function generateData(b, cY, pY, cR){
 
     //canvas rendering
     let ctx = canvas.getContext("2d");
-    let heightRatio = 0.61803398875;
+    let heightRatio = 0.67;
     canvas.height = canvas.width * heightRatio;
 
     let k = (canvas.width - 52) / months.length;
