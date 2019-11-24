@@ -40,7 +40,7 @@ function generateData(b, cY, pY, cR){
         P0.className = "month";
         P1.className = c;
         r = Math.round(Math.random() * factor);
-        if(months[i] === "FEB"){ //simulating seasonal trends - ratios should not be hardcoded there
+        if(months[i] === "FEB"){
           r *= 1.5;
         }
         if(months[i] === "MAY"){
@@ -76,7 +76,7 @@ function generateData(b, cY, pY, cR){
 
     //canvas rendering
     let ctx = canvas.getContext("2d");
-    let heightRatio = 0.61803398875;
+    let heightRatio = 0.67;
     canvas.height = canvas.width * heightRatio;
 
     let k = (canvas.width - 52) / 12;
@@ -108,35 +108,35 @@ function generateData(b, cY, pY, cR){
   }
 
   //display data on the chart
-  //too much fiddling with values to make it fit, need to make it cleaner
 
   function draw(input, color) {
-    let k2 = (canvas.width - 200) / 12;
+    let k2 = (canvas.width) / months.length;
+    let adjust = 45;
     for (i = 0; i < input.length; i += 1) {
         let h = (1 - (input[i]/ maxValue)) * (canvas.height*0.8)+20;
         let h2;
         if (input[i + 1] !== undefined) {
             h2 = (1 - (input[i + 1] / maxValue)) * (canvas.height*0.8)+20;
             ctx.beginPath();
-            ctx.arc(k2 - 45, h, 8, 0, 2 * Math.PI);
+            ctx.arc(k2 - adjust, h, 8, 0, 2 * Math.PI);
             ctx.lineWidth = 5;
             ctx.strokeStyle = color;
-            ctx.moveTo(k2 - 45, h);
-            ctx.lineTo(k2 - 45 + ((canvas.width - 45) / 12), h2);
+            ctx.moveTo(k2 - adjust, h);
+            ctx.lineTo(k2 - adjust + ((canvas.width - adjust) / months.length), h2);
             ctx.fillStyle = color;
             ctx.fill();
             ctx.stroke();
-            k2 += (canvas.width - 45) / 12;
+            k2 += (canvas.width - adjust) / months.length;
         } else {
             h2 = 0;
             ctx.beginPath();
-            ctx.arc(k2 - 45, h, 8, 0, 2 * Math.PI);
+            ctx.arc(k2 - adjust, h, 8, 0, 2 * Math.PI);
             ctx.lineWidth = 5;
             ctx.strokeStyle = color;
             ctx.fillStyle = color;
             ctx.fill();
             ctx.stroke();
-            k2 += (canvas.width - 45) / 12;
+            k2 += (canvas.width - adjust) / months.length;
         }
     }
 }
