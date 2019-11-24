@@ -40,7 +40,7 @@ function generateData(b, cY, pY, cR){
         P0.className = "month";
         P1.className = c;
         r = Math.round(Math.random() * factor);
-        if(months[i] === "FEB"){
+        if(months[i] === "FEB"){ //simulating seasonal trends - ratios should not be hardcoded there
           r *= 1.5;
         }
         if(months[i] === "MAY"){
@@ -76,7 +76,7 @@ function generateData(b, cY, pY, cR){
 
     //canvas rendering
     let ctx = canvas.getContext("2d");
-    let heightRatio = 0.67;
+    let heightRatio = 0.61803398875;
     canvas.height = canvas.width * heightRatio;
 
     let k = (canvas.width - 52) / 12;
@@ -108,6 +108,7 @@ function generateData(b, cY, pY, cR){
   }
 
   //display data on the chart
+  //too much fiddling with values to make it fit, need to make it cleaner
 
   function draw(input, color) {
     let k2 = (canvas.width - 200) / 12;
