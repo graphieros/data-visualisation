@@ -178,8 +178,5 @@ generateData(
   "chartRender"
 )
 
-//other stuff
-
-
 
 
