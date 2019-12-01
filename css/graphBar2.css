@@ -1,0 +1,106 @@
+body {
+  background: linear-gradient(to right, rgb(113, 141, 148), rgb(173, 184, 187), rgb(113, 141, 148));
+  text-align:center;
+}
+
+h1.generic {
+  width:90vw;
+  color:rgb(46, 65, 70);
+  font-size:1em;
+  margin:0 auto;
+  font-family: 'Roboto Mono', monospace;
+}
+
+.dataGeneration,
+.dataModule {
+  margin: 0 auto;
+  border-radius:5px;
+  font-family: 'Roboto Mono', monospace;
+  color: rgb(46, 65, 70);
+  font-size: 0.8em;
+  box-sizing: border-box;
+  padding: 10px;
+  margin-top: 20px;
+}
+
+.dataGeneration {
+  background: linear-gradient(to right, rgb(46, 65, 70), rgb(75, 103, 110), rgb(46, 65, 70));
+  text-align:center;
+  width:150px;
+}
+
+button#generateData{
+  box-sizing:border-box;
+  padding:5px;
+  border-radius:3px;
+  font-family: 'Roboto Mono', monospace;
+  cursor: pointer;
+  box-shadow: 0px 1px 10px 1px  rgb(32, 44, 48);
+  transition: background 0.3s, color 0.3s;
+}
+
+button#generateData:hover {
+  background: rgb(75, 103, 110);
+  color:white;
+  transition: background 0.3s, color 0.3s;
+}
+
+.dataModule {
+  width:90vw;
+  background: linear-gradient(to right, white, transparent, white);
+  box-shadow: 0px 1px 10px 1px  rgb(46, 65, 70);
+  display: grid;
+  grid-gap: 5px;
+  grid-template-columns: 100px 100px auto;
+  align-items:center;
+}
+
+#currentYear,
+#previousYear {
+  display: grid;
+  grid-template-columns: auto auto;
+  grid-gap: 5px;
+  text-align:center;
+}
+
+#currentYear {
+  grid-column: 1;
+}
+
+#previousYear {
+  grid-column: 2;
+}
+
+p.month,
+p.data,
+p.dataC,
+p.dataP {
+  font-size:0.8em;
+  text-align:right;
+  padding-right:5px;
+}
+
+p.month {
+  width:30px;
+}
+
+p.data,
+p.dataC,
+p.dataP{
+  background: white;
+  height:16px;
+  border-radius:3px;
+  width:50px;
+  box-shadow: 0 0 2px black inset;
+}
+
+canvas#chartRender{
+  grid-column:3;
+  background: linear-gradient(to top, white, rgb(255, 232, 190));
+  width:90%;
+  margin: 0 auto;
+  border-radius:3px;
+  box-shadow: 0px 1px 10px 1px  rgb(32, 44, 48);
+  box-sizing:border-box;
+  padding:20px;
+}
