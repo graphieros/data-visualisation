@@ -14,3 +14,6 @@ monthChart.js
 
 graphBar2.js
 > generates random monthly data for a current period and a previous period, and displays a histogram chart on a canvas.
+
+divChart.js
+> generates random data and displays a histogram chart built with DIV elements, allowing easy styling with css. Hovering each histogram will display its data.
