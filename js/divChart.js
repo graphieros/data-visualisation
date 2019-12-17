@@ -58,6 +58,27 @@
       plotCollection.push(plot);
       };
 
+    // get average to display a horizontal line on the chart
+    let sum = 0;
+    let average;
+    for(i = 0; i < allData.length; i += 1){
+      sum += allData[i];
+    }
+    average = Math.round(sum / allData.length);
+    console.log(average);
+
+    (function displayAverage(){
+      let averageDiv = document.createElement("DIV");
+      let averageLegend = document.createElement("DIV");
+      averageDiv.className = "average";
+      averageLegend.className = "legend";
+      averageLegend.innerHTML = "avg" + "<br>" + average;
+      averageLegend.style.marginTop = chartHeight * (1 - (average / maxValue))-18 + "px";
+      averageDiv.style.height = chartHeight * (1 - (average / maxValue)) + "px";
+      averageDiv.appendChild(averageLegend);
+      chart.appendChild(averageDiv);
+    }());
+
     //Create events to display data on each histogram on hover  
     let barCollection = document.getElementsByClassName("plot");
     for(i = 0; i < barCollection.length; i +=1){
