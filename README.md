@@ -15,5 +15,8 @@ monthChart.js
 graphBar2.js
 > generates random monthly data for a current period and a previous period, and displays a histogram chart on a canvas.
 
-divChart.js
+divChart.js (my personal fav for now)
 > generates random data and displays a histogram chart built with DIV elements, allowing easy styling with css. Hovering each histogram will display its data.
+
+svgChart.js
+> generates random data and displays a line chart built with SVG, with event handlers to highlight data when a plot is hovered, or to highlight a plot when data is hovered.
