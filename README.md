@@ -1,4 +1,4 @@
-# data visualization
+# data visualisation
 
 graphBar.js
 > manipulates height of divs depending on data sorted from a HTML table. It displays a bar chart sorted from smallest to highest value.
