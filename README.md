@@ -3,7 +3,7 @@ Presented from recent to oldest.
 
 waffleChart.js
 > generates 3 series of random data and displays a waffle chart built with DIVS, under which are also 3 line charts for each data series. Pretty proud of this one :)
-![ScreenShot](screenshot0.png)
+![ScreenShot](/screenshots/screenshot0.png)
 
 svgChart.js
 > generates random data and displays a line chart built with SVG, with event handlers to highlight data when a plot is hovered, or to highlight a plot when data is hovered.
