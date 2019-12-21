@@ -1,0 +1,283 @@
+:root {
+  --C0: rgb(232, 253, 205);
+  --C1: rgb(194, 218, 163);
+  --C2: rgb(153, 177, 121);
+  --C3: rgb(115, 138, 86);
+  --C4: rgb(85, 105, 59);
+  --C5: rgb(62, 78, 41);
+  --C6: rgb(40, 51, 25);
+  --C7: rgb(23, 31, 13);
+  --B0: rgb(106, 202, 206);
+  --B1: rgb(41, 144, 148);
+  --P0: rgb(228, 169, 61);
+  --P1: rgb(207, 109, 28);
+  --G0: rgb(187, 187, 187);
+  --G1: rgb(150,150,150);
+}
+
+body {
+  margin-left:0;
+  margin-top:0;
+} 
+
+.main {
+  background: linear-gradient(to top right, var(--C0), var(--C4), var(--C3), var(--C2), var(--C1), var(--C0));
+  height:100vh;
+  width:100vw;
+  margin-left:0;
+  margin-top:0;
+  display:block;
+  display: grid;
+  grid-template-columns: 150px auto;
+  grid-gap:20px;
+  box-sizing: border-box;
+  padding:20px;
+  font-family: 'Roboto Mono', monospace, 'Courier New', Courier, monospace;
+} 
+
+#data,
+#chart {
+  border-radius: 3px;
+  width:100%;
+  height:100%;
+}
+
+#data {
+  grid-column: 1;
+  background: linear-gradient(to right, var(--C4), var(--C5), var(--C6), var(--C7));
+  box-shadow: 0 2px 5px 1px black inset;
+  color: var(--C0);
+  display: grid;
+  grid-template-columns: auto;
+  box-sizing: border-box;
+  padding:20px;
+}
+
+#chart {
+  grid-column: 2;
+  background: linear-gradient(to top right, var(--C3), var(--C7));
+  box-shadow: 0 2px 5px 1px black;
+  box-sizing: border-box;
+  padding:30px;
+  display: grid;
+  grid-template-columns: auto;
+  grid-gap:20px;
+}
+
+button#btn {
+  grid-column:1;
+  width:100%;
+  height:30px;
+  background: linear-gradient(to top right, var(--C3), var(--C5));
+  font-family: 'Roboto Mono', monospace, 'Courier New', Courier, monospace;
+  border-radius:3px;
+  box-shadow: 0 2px 5px 1px black;
+  cursor:pointer;
+  color: var(--C0);
+  text-shadow: 0 1px 1px var(--C7);
+  opacity: 0.75;
+  transition: opacity 0.3s, background 0.3s, color 0.3s;
+}
+
+button#btn:hover{
+  opacity: 1;
+  background: linear-gradient(to top right, var(--C2), var(--C4));
+  transition: opacity 0.3s, background 0.3s, color 0.3s;
+  color: white;
+}
+
+#waffle0 {
+  height: 300px;
+  width:300px;
+  margin: 0 auto;
+  display: grid;
+  align-items: center;
+  justify-items: center;
+  grid-template-columns: repeat(10, 1fr);
+  grid-template-rows: repeat(10, 1fr);
+  grid-gap: 5px;
+  padding:20px;
+  border:1px solid var(--C2);
+  border-radius:3px;
+  box-shadow: 0 1px 5px 1px var(--C6) inset;
+  background: linear-gradient(to bottom left, var(--C0), white);
+  transform: rotate(180deg);
+}
+
+.pieces{
+  background: white;
+  height:100%;
+  width:100%;
+  border-radius:1px;
+  cursor: pointer;
+  box-shadow: -1px -1px 2px 0px black;
+  transition: border-radius 0.2s, height 0.2s, width 0.2s;
+}
+
+.pieces:hover{
+  border-radius:100px;
+  height:80%;
+  width:80%;
+  transition: border-radius 0.2s, height 0.2s, width 0.2s;
+}
+
+ul {
+  list-style: none;
+  width:100%;
+}
+
+li{
+ width:100%;
+}
+
+#legend0,
+#legend1,
+#legend2 {
+  height:25px;
+  width:25px;
+  margin:0 auto;
+  box-shadow: 1px 1px 2px 0px black;
+  border-radius:1px;
+  text-align:center;
+  font-size:0.6em;
+  line-height:25px;
+  text-shadow: 0 1px 1px black;
+}
+
+#legend0 {
+  background: linear-gradient(to top right, var(--B0), var(--B1));
+}
+
+#legend1{
+  background: linear-gradient(to top right, var(--P0), var(--P1));
+}
+
+#legend2{
+  background: linear-gradient(to top right, var(--G0), var(--G1));
+}
+
+#dataset0,
+#dataset1,
+#dataset2 {
+  margin: 0 auto;
+  display:block;
+  font-size: 0.6em;
+  text-shadow: 0 1px 1px black;
+  border:0.5px solid var(--C3);
+  height: 170px;
+  box-sizing: border-box;
+  padding:5px;
+  border-radius:2px;
+  box-shadow: 0px 1px 5px 1px black;
+  background:black;
+}
+
+#dataset0{
+  grid-column: 1;
+  color: var(--B0);
+}
+
+#dataset1 {
+  grid-column:2;
+  color: var(--P0);
+}
+
+#dataset2 {
+  grid-column: 3;
+  color: var(--G0);
+}
+
+#datasets,
+#sums{
+  margin: 0 auto;
+  width:100%;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+#sums{
+  color: white;
+  text-shadow: 0 1px 1px black;
+  font-size:0.6em;
+  text-align:center;
+  box-sizing: border-box;
+  padding:5px;
+  border-radius:2px;
+  box-shadow: 0px 1px 5px 1px black;
+  height:23px;
+  border:1px solid var(--C3);
+}
+
+#sumOfSums{
+  width:100%;
+  text-align:center;
+  height:30px;
+  line-height:30px;
+  box-shadow: 0 1px 5px 1px var(--C7) inset;
+  border-radius:3px;
+  background: linear-gradient(to right, var(--C0), var(--C4));
+  color: var(--C7);
+}
+
+.lines {
+  box-sizing: border-box;
+  padding:10px;
+  margin: 0 auto;
+  width:400px;
+  height:300px;
+  background: var(--C2);
+  border-radius:3px;
+  display:grid;
+  grid-template-rows: repeat(3, 1fr);
+  grid-gap: 10px;
+  box-shadow: 1px 1px 5px 1px var(--C7)inset;
+}
+
+.canvasWrapper{
+  height:100%;
+  width:100%;
+  margin:0 auto;
+  display: grid;
+  grid-template-columns: 85px auto;
+  grid-gap: 10px;
+}
+
+#canvasLegend0,
+#canvasLegend1,
+#canvasLegend2 {
+  height:100%;
+  width:100%;
+  margin:0 auto;
+  border-radius:2px;
+  box-shadow: 1px 1px 5px 1px var(--C7);
+  text-align:center;
+  display:grid;
+  align-items:center;
+  justify-items:center;
+  font-size:1.8em;
+  color:white;
+  text-shadow: 0 2px 2px black;
+}
+
+#canvasLegend0 {
+  background: linear-gradient(to top right, var(--B0), var(--B1));
+}
+
+#canvasLegend1 {
+  background: linear-gradient(to top right, var(--P0), var(--P1));
+}
+
+#canvasLegend2 {
+  background: linear-gradient(to top right, var(--G0), var(--G1));
+}
+
+.canvas {
+  box-sizing: border-box;
+  height:100%;
+  width:100%;
+  margin:0 auto;
+  background: white;
+  border-radius:2px;
+  box-shadow: 1px 1px 5px 1px var(--C7);
+  border:5px solid white;
+}
