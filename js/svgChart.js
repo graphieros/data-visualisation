@@ -33,7 +33,7 @@ function svgChart(b, d, l, s, c){
 
     for (i = 0; i < dataArray.length; i += 1){
       sum += dataArray[i];
-    }
+    };
 
     average = Math.round(sum / dataArray.length);
 
@@ -64,7 +64,6 @@ function svgChart(b, d, l, s, c){
       limes.setAttribute("stroke-width", "0.5");
       limes.setAttribute("d", "M" + (space2) + " " + "0" + ", " + (space2) + " " + height);
       
-      
       SVG.appendChild(limes);
 
       cir.setAttribute("r", "2");
@@ -84,7 +83,7 @@ function svgChart(b, d, l, s, c){
             return "L" + " " + (space + interval) + " " + height * (1 - ((dataArray[i+1]/maxValue)));
           }
         }
-      }
+      };
 
       path.setAttribute("stroke", "rgb(100, 139, 130)");
       path.setAttribute("stroke-width", "1.5");
@@ -110,6 +109,7 @@ function svgChart(b, d, l, s, c){
           path.setAttribute("d", "M" + space + " " + plot0 + " " + plot1());
         }
       }
+      
       SVG.appendChild(path);
 
       if(space === 0){
@@ -143,7 +143,7 @@ function svgChart(b, d, l, s, c){
         circle.setAttribute("r", 2);
         circle.setAttribute("fill", "rgb(69, 86, 95)");
         COMMENT.innerHTML = "";
-      })
+      });
     }
 
     for(i = 0; i < DATASET; i += 1){
@@ -162,7 +162,7 @@ function svgChart(b, d, l, s, c){
         circle.setAttribute("r", 2);
         circle.setAttribute("fill", "rgb(69, 86, 95)");
         COMMENT.innerHTML = "";
-      })
+      });
     }
 
   });
