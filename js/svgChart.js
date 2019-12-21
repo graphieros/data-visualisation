@@ -1,10 +1,11 @@
-function svgChart(b, d, l, s){
+function svgChart(b, d, l, s, c){
   const BUTTON = document.getElementById(b);
   const DATA = document.getElementById(d);
   const UL = document.getElementById(l);
   const SVG = document.getElementById(s);
+  const COMMENT = document.getElementById(c);
   const DATASET = 24;
-  const FACTOR = 10000;
+  const FACTOR = 1000; 
 
   BUTTON.addEventListener("click", function(){
     let dataArray = [];
@@ -39,19 +40,32 @@ function svgChart(b, d, l, s){
     //draw SVG
     let circleArray = [];
     let space = 0;
+    let space2 = 0;
 
-    let length = SVG.clientWidth;
+    let length = SVG.clientWidth+10;
     let height = SVG.clientHeight;
     let interval = length / DATASET;
   
     SVG.innerHTML = "";
+
+    let baseLine = document.createElementNS("http://www.w3.org/2000/svg", "path");
+
+    baseLine.setAttribute("stroke", "rgb(195, 219, 213)");
+    baseLine.setAttribute("stroke-width", "0.5");
+    baseLine.setAttribute("d", "M" + "0" + " " + height + ", " + length + " " + height);
+    SVG.appendChild(baseLine);
+
     for(i = 0; i < dataArray.length; i += 1){
       let limes = document.createElementNS("http://www.w3.org/2000/svg", "path");
       let cir = document.createElementNS("http://www.w3.org/2000/svg", "circle");
       let path = document.createElementNS("http://www.w3.org/2000/svg", "path");
 
       limes.setAttribute("stroke", "rgb(195, 219, 213)");
-      limes.setAttribute("stroke-width", "1");
+      limes.setAttribute("stroke-width", "0.5");
+      limes.setAttribute("d", "M" + (space2) + " " + "0" + ", " + (space2) + " " + height);
+      
+      
+      SVG.appendChild(limes);
 
       cir.setAttribute("r", "2");
       cir.setAttribute("fill", "rgb(69, 86, 95)");
@@ -113,32 +127,41 @@ function svgChart(b, d, l, s){
       SVG.appendChild(cir);
       circleArray.push(cir);
       space += interval;
+      space2 += interval;
     }
 
     for(i = 0; i < DATASET; i += 1){
       let circle = circleArray[i];
+      let com = allLi[i].innerHTML;
+      let pos = allLi.indexOf(allLi[i]) + 1;
       allLi[i].addEventListener("mouseover", function(){
-        circle.setAttribute("r", 4);
-        circle.setAttribute("fill", "blue");
+        circle.setAttribute("r", 8);
+        circle.setAttribute("fill", "rgba(39, 158, 130, 0.6)");
+        COMMENT.innerHTML = "Month: " + "<b>"+pos+"</b>" + "<br>" + "Result: " + "<b>"+com+"<b/>";
       });
       allLi[i].addEventListener("mouseout", function(){
         circle.setAttribute("r", 2);
-        circle.setAttribute("fill", "rgb(69, 86, 95)")
+        circle.setAttribute("fill", "rgb(69, 86, 95)");
+        COMMENT.innerHTML = "";
       })
     }
 
     for(i = 0; i < DATASET; i += 1){
       let fig = allLi[i];
       let circle = circleArray[i];
+      let com = allLi[i].innerHTML;
+      let pos = allLi.indexOf(allLi[i]) + 1;
       circleArray[i].addEventListener("mouseover", function(){
         fig.style.opacity = 1;
-        circle.setAttribute("r", 4);
-        circle.setAttribute("fill", "blue");
+        circle.setAttribute("r", 8);
+        circle.setAttribute("fill", "rgba(39, 158, 130, 0.6)");
+        COMMENT.innerHTML = "Month: " + "<b>"+pos+"</b>" + "<br>" + "Result: " + "<b>"+com+"</b>";
       });
       circleArray[i].addEventListener("mouseout", function(){
         fig.style.opacity = 0.3;
         circle.setAttribute("r", 2);
-        circle.setAttribute("fill", "rgb(69, 86, 95)")
+        circle.setAttribute("fill", "rgb(69, 86, 95)");
+        COMMENT.innerHTML = "";
       })
     }
 
@@ -149,7 +172,8 @@ svgChart(
   "btn",
   "data",
   "list",
-  "svg"
+  "svg",
+  "comment"
   );
 
  
