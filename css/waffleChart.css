@@ -11,7 +11,7 @@
   --B1: rgb(41, 144, 148);
   --P0: rgb(228, 169, 61);
   --P1: rgb(207, 109, 28);
-  --G0: rgb(187, 187, 187);
+  --G0: rgb(207, 207, 207);
   --G1: rgb(150,150,150);
 }
 
@@ -110,15 +110,16 @@ button#btn:hover{
   width:100%;
   border-radius:1px;
   cursor: pointer;
-  box-shadow: -1px -1px 2px 0px black;
-  transition: border-radius 0.2s, height 0.2s, width 0.2s;
+  /* box-shadow: -1px -1px 2px 0px black; */
+  transition: height 0.2s, width 0.2s;
 }
 
 .pieces:hover{
-  border-radius:100px;
-  height:80%;
-  width:80%;
-  transition: border-radius 0.2s, height 0.2s, width 0.2s;
+  height:120%;
+  width:120%;
+  z-index:200;
+  transition: height 0.2s, width 0.2s;
+  box-shadow: 0px 0px 10px 1px black;
 }
 
 ul {
