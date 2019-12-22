@@ -112,7 +112,7 @@
         if(dat[i + 1] !== undefined){
           h2 = (1 - Number(dat[i+1].innerHTML) / maxValue) * can.height;
           x.beginPath();
-          x.arc(start, h, 10, 0, 2 * Math.PI);
+          // x.arc(start, h, 10, 0, 2 * Math.PI);
           x.lineWidth = 10;
           x.strokeStyle = color;
           x.moveTo(start, h);
@@ -124,11 +124,11 @@
         }else{
           h2 = 0;
           x.beginPath();
-          x.arc(start, h, 10, 0, 2 * Math.PI);
+          x.arc(start, h, 20, 0, 2 * Math.PI);
           x.lineWidth = 10;
           x.strokeStyle = color;
           x.fillStyle = color;
-          x.fill;
+          x.fill();
           x.stroke();
           start += width;
         }
