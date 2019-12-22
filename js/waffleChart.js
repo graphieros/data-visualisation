@@ -29,6 +29,16 @@
     UL2.innerHTML = "";
     SUMS.innerHTML = "";
 
+    //create pieces
+    let waffle = document.getElementById("waffle0");
+    let squareCount = 100;
+    waffle.innerHTML = "";
+    for(i = 0; i < squareCount; i += 1){
+      let square = document.createElement("DIV");
+      square.className = "pieces";
+      waffle.appendChild(square);
+    }
+
 
     // generate series of random numbers and display in DATA section
     function generate(x, y, clr, clas){
@@ -148,9 +158,9 @@
       return Number(a.innerHTML) / Number(totalSum.innerHTML);
     };
 
-    let prop0 = Math.round((proportion(arraySums[0])) * 100);
-    let prop1 = Math.round((proportion(arraySums[1])) * 100);
-    let prop2 = Math.round((proportion(arraySums[2])) * 100);
+    let prop0 = Math.round((proportion(arraySums[0])) * squareCount);
+    let prop1 = Math.round((proportion(arraySums[1])) * squareCount);
+    let prop2 = Math.round((proportion(arraySums[2])) * squareCount);
 
     console.log(prop0, prop1, prop2);
 
@@ -171,8 +181,8 @@
     canvasLegend1.innerHTML = prop1 + "%";
     canvasLegend2.innerHTML = prop2 + "%";
 
-    if(prop0 + prop1 + prop2 !== 100){
-      prop2 = 100 - prop0 + prop1;
+    if(prop0 + prop1 + prop2 !== squareCount){
+      prop2 = squareCount - prop0 + prop1;
     }
     
     //display result in waffle chart
@@ -180,21 +190,25 @@
     for(i = 0; i < PIECES.length; i += 1){
       let piece = PIECES[i];
       piece.style.background = "white";
+      piece.style.border = "none";
     }
 
     for(i = 0; i < prop0; i += 1){
       let piece = PIECES[i];
       piece.style.background = "linear-gradient(to right bottom, var(--B0), var(--B1)";
+      piece.style.border = "1px solid var(--B0)";
     }
 
     for(i = 0; i < prop1; i +=1){
       let piece = PIECES[i + prop0];
       piece.style.background = "linear-gradient(to right bottom, var(--P0), var(--P1)";
+      piece.style.border = "1px solid var(--P0)";
     }
 
     for(i = 0; i < prop2; i += 1){
       let piece = PIECES[i + prop0 + prop1];
       piece.style.background = "linear-gradient(to right bottom, var(--G0), var(--G1)";
+      piece.style.border = "1px solid var(--G0)";
     }
 
   });
