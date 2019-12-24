@@ -11,6 +11,7 @@ personal ranking:
 \*   noob beginnings, not scalable
 
 <hr/>
+
 histoDiv.js ***
 > an optimized bar chart built with DIVS. Light, responsive, and prone to nice event handling. CSS grid parameters used in JS to make it scalable. Ideal for data sets of 2 to 36 items (weeks, months, years...)
 
