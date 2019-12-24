@@ -1,9 +1,13 @@
 # data visualisation
 Presented from recent to oldest.
 personal ranking:
+
 **** library material
+
 *** copy paste material
+
 **  usable
+
 *   noob beginnings, not scalable
 
 histoDiv.js ***
