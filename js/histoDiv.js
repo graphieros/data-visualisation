@@ -76,20 +76,20 @@ function generateData(b, d, c, l, m){
     }
 
     //show side measures
-    let sideTop = document.createElement("P");
-    let sideMid = document.createElement("P");
-    let sideBot = document.createElement("P");
-    sideTop.className = "sideVal";
-    sideTop.id = "sideTop";
-    sideMid.className = "sideVal";
-    sideBot.className = "sideVal";
-    sideBot.id = "sideBot";
-    sideTop.innerHTML = Math.round(maxValue / 100) *100;
-    sideMid.innerHTML = (Math.round(maxValue / 100) * 100) /2;
-    sideBot.innerHTML = 0;
-    SIDE.appendChild(sideTop);
-    SIDE.appendChild(sideMid);
-    SIDE.appendChild(sideBot);
+    // let sideTop = document.createElement("P");
+    // let sideMid = document.createElement("P");
+    // let sideBot = document.createElement("P");
+    // sideTop.className = "sideVal";
+    // sideTop.id = "sideTop";
+    // sideMid.className = "sideVal";
+    // sideBot.className = "sideVal";
+    // sideBot.id = "sideBot";
+    // sideTop.innerHTML = Math.round(maxValue / 100) *100;
+    // sideMid.innerHTML = (Math.round(maxValue / 100) * 100) /2;
+    // sideBot.innerHTML = 0;
+    // SIDE.appendChild(sideTop);
+    // SIDE.appendChild(sideMid);
+    // SIDE.appendChild(sideBot);
 
   })
 
