@@ -1,8 +1,9 @@
-function generateData(b, d, c, l){
+function generateData(b, d, c, l, m){
   const BUTTON = document.getElementById(b);
   const DATAWRAP = document.getElementById(d);
   const CHART = document.getElementById(c);
   const LEGEND = document.getElementById(l);
+  const SIDE = document.getElementById(m);
   const DATASET = 12;
   const FACTOR = 1000;
 
@@ -12,6 +13,7 @@ function generateData(b, d, c, l){
     DATAWRAP.innerHTML = "";
     CHART.innerHTML = "";
     LEGEND.innerHTML = "";
+    SIDE.innerHTML = "";
     let nums = [];
     let psum = document.createElement("P");
     psum.className = "sum";
@@ -73,6 +75,22 @@ function generateData(b, d, c, l){
       })
     }
 
+    //show side measures
+    let sideTop = document.createElement("P");
+    let sideMid = document.createElement("P");
+    let sideBot = document.createElement("P");
+    sideTop.className = "sideVal";
+    sideTop.id = "sideTop";
+    sideMid.className = "sideVal";
+    sideBot.className = "sideVal";
+    sideBot.id = "sideBot";
+    sideTop.innerHTML = Math.round(maxValue / 100) *100;
+    sideMid.innerHTML = (Math.round(maxValue / 100) * 100) /2;
+    sideBot.innerHTML = 0;
+    SIDE.appendChild(sideTop);
+    SIDE.appendChild(sideMid);
+    SIDE.appendChild(sideBot);
+
   })
 
 }
@@ -81,5 +99,6 @@ generateData(
   "btn",
   "generatedData",
   "chart",
-  "legend"
+  "legend",
+  "measure"
 );
