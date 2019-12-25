@@ -110,16 +110,59 @@ p.sum {
   line-height:25px;
 }
 
+.chartWrapper{
+  display: grid;
+  grid-template-columns: 30px auto;
+}
+
+.sideMeasure{
+  background: white;
+  height:50%;
+  width:100%;
+  border-radius: 5px 0 0 5px;
+  border:1px solid white;
+  display: grid;
+  grid-template-columns: auto;
+  grid-template-rows: 3px auto 40px;
+  grid-gap: 5px;
+  line-height:65px;
+}
+
+p.sideVal {
+  text-align:right;
+  font-size:0.7em;
+  color: var(--B3);
+  box-sizing: border-box;
+  padding-right:3px;
+}
+
+p#sideTop{
+  margin-top:0px;
+}
+
+.measure{
+  grid-row:2;
+  height:100%;
+  width:100%;
+  display:block;
+  background:transparent;
+}
+
 .subChartWrapper {
+  grid-column: 2;
   width:100%;
   height:50%;
   background:linear-gradient(to bottom left, var(--B0), white);
   display: block;
   box-sizing: border-box;
   align-items:end;
-  padding:30px;
+  padding-top: 40px;
+  padding-left:20px;
+  padding-right:20px;
+  padding-bottom:30px;
   border-radius:2px;
   box-shadow: 0 2px 10px 1px black inset;
+  outline: 1px solid white;
 }
 
 #chart {
@@ -161,6 +204,8 @@ p.sum {
   transition: opacity 0.3s;
   display: grid;
   grid-template-columns: auto;
+  border-radius: 1px 1px 0 0;
+
 }
 
 .histo:hover{
