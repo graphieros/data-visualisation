@@ -187,6 +187,20 @@ p.sum {
 @media screen and (max-width: 992px) {
   .dataOnHisto{
     transform: rotate(-90deg);
-    width:10px;
-    margin-left:4px;
+    width:100%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: -20px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .dataOnHisto{
+    transform: rotate(-90deg);
+    width:100%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: -20px;
+    font-size:0.4em;
+  }
 }
