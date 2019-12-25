@@ -1,0 +1,227 @@
+:root {
+  --C0: rgb(240, 212, 186);
+  --C1: rgb(221, 183, 148);
+  --C2: rgb(197, 155, 116);
+  --C3: rgb(206, 156, 109);
+  --C4: rgb(172, 121, 74);
+  --C5: rgb(153, 100, 50);
+  --C6: rgb(117, 70, 25);
+  --C7: rgb(77, 43, 11);
+  --C8: rgb(48, 25, 5);
+  --B0: rgb(170, 236, 236);
+  --B1: rgb(127, 206, 206);
+  --B2: rgb(83, 161, 161);
+  --B3: rgb(57, 122, 122);
+  --V0: rgb(116, 170, 85);
+  --V1: rgb(91, 148, 58);
+  --V2: rgb(67, 116, 38);
+  --V3: rgb(46, 87, 22);
+}
+
+body {
+  margin-left:0;
+  margin-top:0;
+} 
+
+.main {
+  background: linear-gradient(to bottom left, var(--B0), var(--B1), var(--B2), var(--B3));
+  height:100vh;
+  width:100vw;
+  margin-left:0;
+  margin-top:0;
+  display:block;
+  display: grid;
+  grid-template-columns: 150px auto;
+  grid-gap:20px;
+  box-sizing: border-box;
+  padding:20px;
+  font-family: 'Roboto Mono', monospace, 'Courier New', Courier, monospace;
+} 
+
+.data {
+  display:grid;
+  width:100%;
+  height:100%;
+  grid-column:1;
+  background: var(--B3);
+  box-sizing: border-box;
+  padding:20px;
+  color: var(--B0);
+  font-size: 0.8em;
+  box-shadow: 0 2px 10px 1px black inset;
+  border-radius:3px;
+  line-height: 3px;
+}
+
+#generatedData{
+  display: grid;
+  grid-template-columns: auto auto;
+}
+
+#dataLeft{
+  grid-column: 1;
+}
+
+#dataRight{
+  grid-column: 2;
+}
+
+.chartWrapper {
+  display:grid;
+  grid-template-columns: auto;
+  align-items:center;
+  justify-items:center;
+  width:100%;
+  height:100%;
+  background: linear-gradient(to top right, var(--B0), var(--B1), var(--B2), var(--B3));
+  box-sizing: border-box;
+  padding:20px;
+  border-radius:3px;
+  box-shadow: 0 2px 10px 1px black inset;
+  border:1px solid white;
+}
+
+.chartWrapperInside {
+  display:grid;
+  grid-template-columns: auto 50px auto;
+  align-items:center;
+  justify-items:center;
+  width:100%;
+  height:100%;
+  box-sizing: border-box;
+  padding:20px;
+  border-radius:2px;
+  border:1px solid white;
+  background:white;
+  box-shadow: 0 2px 10px 1px black;
+}
+
+#chartLeft,
+#chartRight {
+  display: grid;
+  grid-gap: 5px;
+  width:100%;
+  height:100%;
+  background: transparent;
+  box-sizing: border-box;
+  font-size: 0.75em;
+}
+
+#chartMiddle {
+  display:grid;
+  grid-gap:5px;
+  height:100%;
+  margin-left:-10%; /*to fix a weird twist I did not understand*/
+  grid-column:2;
+  align-items:center;
+  justify-items: center;
+  box-sizing: border-box;
+  font-size:0.75em;
+}
+
+#chartLeft {
+  grid-column: 1;
+  justify-items: end;
+  align-items:center;
+  padding-left: 20px;
+  text-align:left;
+  height:100%;
+}
+
+#chartRight {
+  grid-column: 3;
+  align-items:center;
+  padding-right:20px;
+  text-align:right;
+  height:100%;
+}
+
+.captionLeft {
+  margin-left: -25px;
+}
+
+.captionRight{
+  margin-right: -25px;
+}
+
+.histoRight,
+.histoLeft {
+  display:grid;
+  align-items:center;
+  height:100%;
+}
+
+.histoLeft {
+  background: linear-gradient(to left, var(--C1), var(--C4));
+  border-radius: 2px 0 0 2px;
+  box-shadow: -1px 0 2px 1px var(--C8);
+}
+
+.histoRight {
+  background: linear-gradient(to right, var(--C1), var(--C4));
+  border-radius: 0 2px 2px 0;
+  box-shadow: 1px 0 2px 1px var(--C8);
+}
+
+.knot {
+  display:grid;
+  align-items:center;
+  justify-items:center;
+  height:100%;
+  width:40px;
+  margin:0 auto;
+  font-size:0.75em;
+  background: white;
+  border:1px solid var(--C5);
+  grid-column:2;
+}
+
+button {
+  margin: 0 auto;
+  width: 100%;
+  height:30px;
+  border-radius:2px;
+  box-shadow: 0 2px 10px 1px black;
+  background: linear-gradient(to top right, var(--B0), var(--B1), var(--B2), var(--B3));
+  color: var(--C8);
+  font-family: 'Roboto Mono', monospace, 'Courier New', Courier, monospace;
+  font-size:1em;
+  font-weight:bold;
+  cursor: pointer;
+  opacity: 0.5;
+  transition: opacity 0.3s;
+}
+
+button:hover {
+  opacity:1;
+  transition: opacity 0.3s;
+}
+
+p.num{
+  width:100%;
+  text-align:center;
+  text-shadow: 0 1px 1px black;
+}
+
+p.sum {
+  width:100%;
+  text-align:center;
+  text-shadow: 0 1px 1px black;
+  font-size: 1.3em;
+  border: 1px solid var(--B0);
+  box-sizing: border-box;
+  padding:3px;
+  border-radius:2px;
+  box-shadow: 0 1px 5px 1px black inset;
+  background: linear-gradient(to top right, var(--C7), var(--C8));
+  height:30px;
+  line-height:25px;
+}
+
+@media screen and (max-width: 992px) {
+
+}
+
+@media screen and (max-width: 600px) {
+
+}
