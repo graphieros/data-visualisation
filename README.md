@@ -24,6 +24,7 @@ histoDiv.js ***
 waffleChart.js ***
 > generates 3 series of random data and displays a waffle chart built with DIVS, under which are also 3 line charts for each data series. Pretty proud of this one :)
 <code>[code](https://github.com/graphieros/data-visualisation/blob/master/js/waffleChart.js)</code>
+![screenShot](https://github.com/graphieros/data-visualisation/blob/master/pics/waffleChart.png)
 
 svgChart.js **
 > generates random data and displays a line chart built with SVG, with event handlers to highlight data when a plot is hovered, or to highlight a plot when data is hovered.
