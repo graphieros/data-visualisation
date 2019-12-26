@@ -5,7 +5,7 @@ function generateData(b, dL, dR, cL, cR, cM){
   const CHARTLEFT = document.getElementById(cL);
   const CHARTRIGHT = document.getElementById(cR);
   const CHARTMIDDLE = document.getElementById(cM);
-  const DATASET = 6;
+  const DATASET = 15;
   const FACTOR = 1000;
 
   let i;
@@ -60,28 +60,69 @@ function generateData(b, dL, dR, cL, cR, cM){
     let butLeft = [];
     let butRight = [];
 
-    //commented out below is a function to generate random set of colors for each dataset
+    //incremental color generator
 
-    // let color = function(){
-    //   let red = Math.random() * 255;
-    //   let green = Math.random() * 255;
-    //   let blue = Math.random() * 255;
-    //   return `${red},${green},${blue}`;
-    // };
+    let colorCollection = [];
 
-    // let arrayColors = [];
+    (function generateColor(){
+      let red = 235;
+      let green = 116;
+      let blue = 52;
+      let move = 0;
+      let color;
 
-    // for(i = 0; i < DATASET; i += 1){
-    //   arrayColors.push(`rgb(${color()})`);
-    // }
+      if(DATASET <= 10){
+        move = 40;
+      }else if(DATASET > 10 && DATASET <= 20){
+        move = 30;
+      }else if(DATASET > 20 && DATASET <= 40){
+        move = 20;
+      }else{
+        move = 10;
+      }
 
-    function nestButterflies(chart, nums, but, cap, side){
+      for(i = 0; i < DATASET+1 ; i += 1){
+        color = `rgb(${red},${green},${blue})`;
+
+       if(red >= 235 && blue === 52){
+         green += move;
+         if (green >= 235){
+           green = 235;
+         }
+       }
+       
+       if(green >= 235 && blue === 52){
+         red -= move;
+         green = 235;
+       }
+       
+       if(red <= 52 && green >= 235){
+         blue += move;
+         green = 235;
+       }
+       
+       if(red <= 52 && blue >= 235){
+         green -= move;
+         blue = 235;
+       }
+       
+       if(green <= 52 && blue >= 235){
+         red += move;
+         blue = 235;
+       }
+        colorCollection.push(color);
+      }
+    }());
+
+
+    function nestButterflies(chart, nums, but, cap, side, color, dir){
       for(i = 0; i < DATASET; i += 1){
         let histo = document.createElement("DIV");
         let caption = document.createElement("DIV");
         histo.className = side;
         caption.className = cap;
         histo.style.width = `${((nums[i]/maxValue)*100)}%`;
+        histo.style.background = `linear-gradient(${dir},${color[i]},${color[i+1]})`;
         caption.innerHTML = nums[i];
         histo.appendChild(caption);
         chart.appendChild(histo);
@@ -89,8 +130,8 @@ function generateData(b, dL, dR, cL, cR, cM){
       }
     }
 
-    nestButterflies(CHARTLEFT, numsLeft, butLeft, "captionLeft", "histoLeft");
-    nestButterflies(CHARTRIGHT, numsRight, butRight, "captionRight", "histoRight");
+    nestButterflies(CHARTLEFT, numsLeft, butLeft, "captionLeft", "histoLeft", colorCollection, "to left");
+    nestButterflies(CHARTRIGHT, numsRight, butRight, "captionRight", "histoRight", colorCollection, "to right");
     
     //display analysis in center row
 
