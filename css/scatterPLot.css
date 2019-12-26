@@ -1,0 +1,241 @@
+:root {
+  --C0: rgb(240, 212, 186);
+  --C1: rgb(221, 183, 148);
+  --C2: rgb(197, 155, 116);
+  --C3: rgb(206, 156, 109);
+  --C4: rgb(172, 121, 74);
+  --C5: rgb(153, 100, 50);
+  --C6: rgb(117, 70, 25);
+  --C7: rgb(77, 43, 11);
+  --C8: rgb(48, 25, 5);
+  --B0: rgb(170, 236, 236);
+  --B1: rgb(127, 206, 206);
+  --B2: rgb(83, 161, 161);
+  --B3: rgb(57, 122, 122);
+  --B4: rgb(40, 94, 94);
+  --B5: rgb(23, 63, 63);
+  --V0: rgb(116, 170, 85);
+  --V1: rgb(91, 148, 58);
+  --V2: rgb(67, 116, 38);
+  --V3: rgb(46, 87, 22);
+}
+
+body {
+  margin-left:0;
+  margin-top:0;
+} 
+
+.main {
+  background: linear-gradient(to bottom left, var(--B0), var(--B1), var(--B2), var(--B3));
+  height:100vh;
+  width:100vw;
+  margin-left:0;
+  margin-top:0;
+  display:block;
+  display: grid;
+  grid-template-columns: 200px auto;
+  grid-gap:20px;
+  box-sizing: border-box;
+  padding:20px;
+  font-family: 'Roboto Mono', monospace, 'Courier New', Courier, monospace;
+} 
+
+.data{
+  grid-column:1;
+  height:100%;
+  width:100%;
+  display: grid;
+  grid-template-columns: auto;
+  grid-template-rows: 40px 40px auto;
+  box-sizing: border-box;
+  padding:20px;
+  background:white;
+  border-radius:3px;
+  box-shadow: 0 2px 10px 1px black inset;
+}
+
+button#btn{
+  height:30px;
+  border-radius:2px;
+  cursor: pointer;
+  background: linear-gradient(to bottom, var(--B0), var(--B1), var(--B2), var(--B3));
+  border:none;
+  font-size:0.8em;
+  color:white;
+  text-shadow: 0 1px 1px black;
+  font-family: 'Roboto Mono', monospace, 'Courier New', Courier, monospace;
+  opacity:0.75;
+  transition: opacity 0.3s;
+  border:1px solid var(--B3);
+}
+
+button#btn:hover{
+  background: linear-gradient(to top, var(--B0), var(--B1), var(--B2), var(--B3));
+  opacity:1;
+  transition: opacity 0.3s;
+  border:1px solid white;
+}
+
+#titles{
+  height:40px;
+  width:100%;
+  background: var(--C1);
+  border-radius:2px 2px 0 0;
+  display:grid;
+  grid-template-columns: repeat(4,1fr);
+  font-size:0.6em;
+  grid-gap: 5px;
+  box-sizing: border-box;
+  padding:5px;
+}
+
+p.title{
+  background: radial-gradient(var(--C4), var(--C8));
+  height:20px;
+  width:100%;
+  display:grid;
+  align-items:center;
+  justify-items:center;
+  border-radius:1px;
+  color:white;
+  text-shadow: 0 1px 1px black;
+}
+
+.itemPdt,
+.itemTre,
+.itemRs,
+.itemTitle{
+  background:white;
+  height:100%;
+  width:100%;
+  font-size:0.6em;
+  display:grid;
+  align-items:center;
+  justify-items:center;
+  border-radius:1px;
+}
+
+.item{
+  background:white;
+}
+
+.itemTitle{
+  background: radial-gradient(var(--B0), var(--B3));
+}
+
+#dataGeneration{
+  height:100%;
+  width:100%;
+  background: white;
+  border-radius:0 0 2px 2px;
+  display:grid;
+  grid-template-columns: repeat(4, 22.5%);
+  grid-gap:5px;
+  box-sizing: border-box;
+  padding:5px;
+}
+
+.chartWrapper{
+  display:block;
+  position:relative;
+}
+
+.chart {
+  grid-column:2;
+  height:100%;
+  width:100%;
+  background:white;
+  border-radius:3px;
+  display: grid;
+  grid-template-columns: auto;
+  align-items:center;
+  justify-items: center;
+  box-shadow: 0 2px 10px 1px black inset;
+}
+
+p#legendLeft{
+  position:absolute;
+  left:-190px;
+  top:174px;
+  z-index:100;
+  width:400px;
+  transform: rotate(-90deg);
+  box-sizing: border-box;
+  text-align:center;
+  font-size:0.75em;
+  background:transparent;
+  color:var(--B5)
+}
+
+p#legendBottom{
+  position:absolute;
+  bottom:-5px;
+  z-index:100;
+  width:400px;
+  box-sizing: border-box;
+  text-align:center;
+  font-size:0.75em;
+  background:transparent;
+  color:var(--B5)
+}
+
+#chart{
+  display:grid;
+  position:relative;
+  width:400px;
+  height:400px;
+  border-radius:40px;
+  background: linear-gradient(to top right, var(--C4), var(--C1), var(--C0), white);
+  box-sizing: border-box;
+  border:30px solid var(--C0);
+  box-shadow: 0 3px 10px 1px var(--B5);
+  box-shadow: 0 -1px 5px var(--C8) inset;
+}
+
+.plot {
+  display:inline-block;
+  position:absolute;
+  height:10px;
+  width:10px;
+  border-radius:100%;
+  transform: translate(-50%, 50%);
+  background: radial-gradient(rgb(255,255,255), var(--B0), var(--B1), var(--B2), var(--B3), var(--B4));
+  transition: height 0.3s, width 0.3s;
+  cursor: pointer;
+  box-shadow: 0 1px 2px 0px black;
+  display:grid;
+  align-items:center;
+  justify-items:start;
+  box-sizing: border-box;
+  padding-left:5px;
+  color: var(--B5);
+}
+
+.plot:hover {
+  height:100px;
+  width:100px;
+  transform: translate(-50%, 50%);
+  transition: height 0.3s, width 0.3s;
+  box-shadow: -10px 10px 10px var(--B5);
+  z-index:1000;
+}
+
+.plotSelect{
+  display:inline-block;
+  position:absolute;
+  height:100px;
+  width:100px;
+  border-radius:100%;
+  transform: translate(-50%, 50%);
+  background: radial-gradient(rgb(255,255,255), var(--B0), var(--B1), var(--B2), var(--B3), var(--B4));
+  transition: height 0.3s, width 0.3s;
+  cursor: pointer;
+  box-shadow: -10px 10px 10px var(--B5);
+  display:grid;
+  align-items:center;
+  justify-items:center;
+  box-sizing: border-box;
+  padding-left:5px;
+  color: var(--B5);
+  z-index:1000;
+}
