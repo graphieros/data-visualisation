@@ -1,14 +1,12 @@
 function scatterPlots(b, d, c){
   const BUTTON = document.getElementById(b);
   const DATAWRAP = document.getElementById(d);
+  const CHART = document.getElementById(c);
   const DATASET = 20;
   const FACTORPDT = 100;
   const FACTORTRE = 200;
-  const CHART = document.getElementById(c);
-
 
   let i;
-
 
   BUTTON.addEventListener("click", function(){
 
@@ -43,7 +41,7 @@ function scatterPlots(b, d, c){
         move = 10;
       }
 
-      for(i = 0; i < DATASET+1 ; i += 1){
+      for(i = 0; i < DATASET + 1 ; i += 1){
         color = `rgb(${red},${green},${blue})`;
 
        if(red >= 235 && blue === 52){
@@ -76,6 +74,7 @@ function scatterPlots(b, d, c){
       }
     }());     
 
+    //generate random data sets
     let allSets = [];
     let allPdt = [];
     let allTre = [];
@@ -117,13 +116,12 @@ function scatterPlots(b, d, c){
       colRs.push(nRs);
     };
 
-    console.log(colPdt)
-
     let maxPdt = Math.max(...colPdt);
     let maxTre = Math.max(...colTre);
     let x = 0;
     let y = 0;
 
+    //create plots
     let plotCollection = [];
 
     for(i = 0; i < DATASET; i += 1){
