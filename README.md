@@ -8,7 +8,7 @@ personal ranking:
 
 **  usable
 
-\*   noob beginnings, not scalable
+\*   noob beginnings, cluncky
 
 <hr/>
 
