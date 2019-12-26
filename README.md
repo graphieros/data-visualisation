@@ -15,6 +15,7 @@ personal ranking:
 butterflyChart.js ***
 > an optimized butterfly chart build with DIVS. Light, responsive, and prone to easy event handling. CSS grid used in JS to make it scalable. Ideal for data sets from 4 to 20 items, to evaluate progression of N vs N-1 data for several departments for example.
 <code>[code](https://github.com/graphieros/data-visualisation/blob/master/js/butterflyChart.js)</code>
+![screenShot](https://github.com/graphieros/data-visualisation/blob/master/pics/butterflyChart.png)
 
 histoDiv.js ***
 > an optimized bar chart built with DIVS. Light, responsive, and prone to easy event handling. CSS grid used in JS to make it scalable. Ideal for data sets of 2 to 36 items (weeks, months, years...).
