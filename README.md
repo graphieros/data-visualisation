@@ -12,6 +12,11 @@ personal ranking:
 
 <hr/>
 
+radarChart ***
+> a radar chart built with CANVAS, fully scalable for any data set (from 3 to n). Next step is to build the same using SVG, to add event handlers.
+<code>[code](https://github.com/graphieros/data-visualisation/blob/master/js/radarChart.js)</code>
+![screenShot](https://github.com/graphieros/data-visualisation/blob/master/pics/radarChart.png)
+
 scatterPlot.js ***
 > a scatter plot chart build with DIVS and catchy event handlers. Built to analyze three sets of data (quantity of products sold, quantity of treatments performed, and the first over the second). For data sets from 5 to 100 items. (if you choose a data set of 10000 you'll get pink kaviar as a result).
 <code>[code](https://github.com/graphieros/data-visualisation/blob/master/js/scatterPlot.js)</code>
