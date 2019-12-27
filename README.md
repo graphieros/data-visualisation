@@ -15,7 +15,7 @@ personal ranking:
 scatterPlot.js ***
 > a scatter plot chart build with DIVS and catchy event handlers. Built to analyze three sets of data (quantity of products sold, quantity of treatments performed, and the first over the second). For data sets from 5 to 100 items.
 <code>[code](https://github.com/graphieros/data-visualisation/blob/master/js/scatterPlot.js)</code>
-![screenShot](https://github.com/graphieros/data-visualisation/blob/master/pics/scatterPlot.png)
+![screenShot](https://github.com/graphieros/data-visualisation/blob/master/pics/ScatterPlot.png)
 
 butterflyChart.js ***
 > an optimized butterfly chart build with DIVS. Light, responsive, and prone to easy event handling. CSS grid used in JS to make it scalable. Ideal for data sets from 4 to 20 items, to evaluate progression of N vs N-1 data for several departments for example.
