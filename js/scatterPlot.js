@@ -2,17 +2,14 @@ function scatterPlots(inp, b, d, c){
   const BUTTON = document.getElementById(b);
   const DATAWRAP = document.getElementById(d);
   const CHART = document.getElementById(c);
-  // const INPUT = document.getElementById(inp);
-  // const DATASET = 10;
-  const FACTORPDT = 100;
-  const FACTORTRE = 200;
+  const FACTORPDT = 1000;
+  const FACTORTRE = 2000;
 
   let i;
 
   BUTTON.addEventListener("click", function(){
 
-    const INPUT = document.getElementById(inp).value;
-    const DATASET = INPUT;
+    const DATASET = document.getElementById(inp).value;
 
     DATAWRAP.innerHTML = "";
     CHART.innerHTML = "";
@@ -36,7 +33,7 @@ function scatterPlots(inp, b, d, c){
       let color;
 
       if(DATASET <= 10){
-        move = 80;
+        move = move;
       }else if(DATASET > 10 && DATASET <= 20){
         move *= 0.5;
       }else if(DATASET > 20 && DATASET <= 40){
@@ -130,6 +127,11 @@ function scatterPlots(inp, b, d, c){
     let maxTre = Math.max(...colTre);
     let x = 0;
     let y = 0;
+
+    let Yaxis = document.getElementById("maxY");
+    let Xaxis = document.getElementById("maxX");
+    Yaxis.innerHTML = maxTre;
+    Xaxis.innerHTML = maxPdt;
 
     //create plots
     let plotCollection = [];
