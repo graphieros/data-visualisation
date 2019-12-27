@@ -13,7 +13,7 @@ personal ranking:
 <hr/>
 
 scatterPlot.js ***
-> a scatter plot chart build with DIVS and catchy event handlers. Built to analyze three sets of data (quantity of products sold, quantity of treatments performed, and the first over the second). For data sets from 5 to 100 items.
+> a scatter plot chart build with DIVS and catchy event handlers. Built to analyze three sets of data (quantity of products sold, quantity of treatments performed, and the first over the second). For data sets from 5 to 100 items. (if you choose a data set of 10000 you'll get pink kaviar as a result).
 <code>[code](https://github.com/graphieros/data-visualisation/blob/master/js/scatterPlot.js)</code>
 ![screenShot](https://github.com/graphieros/data-visualisation/blob/master/pics/ScatterPlot.png)
 
