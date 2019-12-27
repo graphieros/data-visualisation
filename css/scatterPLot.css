@@ -52,6 +52,7 @@ body {
   background:white;
   border-radius:3px;
   box-shadow: 0 2px 10px 1px black inset;
+  overflow: scroll;
 }
 
 button#btn{
@@ -205,10 +206,12 @@ p#legendBottom{
   box-shadow: 0 1px 2px 0px black;
   display:grid;
   align-items:center;
-  justify-items:start;
+  justify-items:center;
   box-sizing: border-box;
+  text-align:center;
   padding-left:5px;
   color: var(--B5);
+  font-size:1px;
 }
 
 .plot:hover {
@@ -218,6 +221,7 @@ p#legendBottom{
   transition: height 0.3s, width 0.3s;
   box-shadow: -10px 10px 10px var(--B5);
   z-index:1000;
+  font-size:0.75em;
 }
 
 .plotSelect{
@@ -238,4 +242,6 @@ p#legendBottom{
   padding-left:5px;
   color: var(--B5);
   z-index:1000;
+  text-align:center;
+  font-size:0.75em;
 }
