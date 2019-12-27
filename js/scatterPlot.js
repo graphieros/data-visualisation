@@ -1,14 +1,18 @@
-function scatterPlots(b, d, c){
+function scatterPlots(inp, b, d, c){
   const BUTTON = document.getElementById(b);
   const DATAWRAP = document.getElementById(d);
   const CHART = document.getElementById(c);
-  const DATASET = 20;
+  // const INPUT = document.getElementById(inp);
+  // const DATASET = 10;
   const FACTORPDT = 100;
   const FACTORTRE = 200;
 
   let i;
 
   BUTTON.addEventListener("click", function(){
+
+    const INPUT = document.getElementById(inp).value;
+    const DATASET = INPUT;
 
     DATAWRAP.innerHTML = "";
     CHART.innerHTML = "";
@@ -28,17 +32,23 @@ function scatterPlots(b, d, c){
       let red = 235;
       let green = 116;
       let blue = 52;
-      let move = 0;
+      let move = 80;
       let color;
 
       if(DATASET <= 10){
-        move = 40;
+        move = 80;
       }else if(DATASET > 10 && DATASET <= 20){
-        move = 30;
+        move *= 0.5;
       }else if(DATASET > 20 && DATASET <= 40){
-        move = 20;
+        move *= 0.28;
+      }else if(DATASET > 30 && DATASET <= 60){
+        move *= 0.2;
+      }else if(DATASET > 60 && DATASET <= 80){
+        move *= 0.1;
+      }else if(DATASET > 80 && DATASET <= 120){
+        move *= 0.08;
       }else{
-        move = 10;
+        move *= 0.05;
       }
 
       for(i = 0; i < DATASET + 1 ; i += 1){
@@ -140,9 +150,13 @@ function scatterPlots(b, d, c){
     for(i = 0; i < plotCollection.length; i += 1){
       let p = plotCollection[i];
       let data = colRs[i];
+      let oneSet = allSets[i];
+      let onePdt = allPdt[i];
+      let oneTre = allTre[i];
+      let oneRs = allRs[i];
 
       p.addEventListener("mouseover", function(){
-        p.innerHTML = `${data}%`;
+        p.innerHTML = `${oneSet.innerHTML}<br>r:${onePdt.innerHTML}<br>s:${oneTre.innerHTML}<br>${data}%`;
       });
 
       p.addEventListener("mouseout", function(){
@@ -161,7 +175,7 @@ function scatterPlots(b, d, c){
 
       oneSet.addEventListener("mouseover", function(){
         onePlot.className = "plotSelect";
-        onePlot.innerHTML = `${data}%`;
+        onePlot.innerHTML = `${oneSet.innerHTML}<br>r:${onePdt.innerHTML}<br>s:${oneTre.innerHTML}<br>${data}%`;
       });
 
       oneSet.addEventListener("mouseout", function(){
@@ -187,6 +201,7 @@ function scatterPlots(b, d, c){
 }
 
 scatterPlots(
+  "inputSet",
   "btn",
   "dataGeneration",
   "chart"
