@@ -55,6 +55,19 @@ body {
   overflow: scroll;
 }
 
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input {
+  border-radius: 2px 2px 0 0;
+  font-family: 'Roboto Mono', monospace, 'Courier New', Courier, monospace;
+  text-align:center;
+  box-shadow: 0 2px 5px 1px var(--B5)inset;
+}
+
 button#btn{
   height:30px;
   border-radius:2px;
