@@ -104,7 +104,7 @@ function radarChartCanvas(b, d, c, w, sr){
       }
 
     //CANVAS-------
-    //draw pentagon
+    //draw polygon
     let ctx = canvas.getContext("2d");
     ctx.clearRect(0,0, canvas.width, canvas.height);
     let sides = DATASET;
@@ -198,8 +198,8 @@ function radarChartCanvas(b, d, c, w, sr){
       
     // }());
 
-    //SVG---------
-    //draw pentagon
+    //SVG
+    //draw ploygon
     let plots = [];
 
     (function CreateSVG() {
