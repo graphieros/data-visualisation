@@ -12,6 +12,11 @@ personal ranking:
 
 <hr/>
 
+radarChart2 ***
+> a radar chart built with CANVAS and SVG that allow event handling. Fully scalable for any data set (from 3 to n).
+<code>[code](https://github.com/graphieros/data-visualisation/blob/master/js/radarChart2.js)</code>
+![screenShot](https://github.com/graphieros/data-visualisation/blob/master/pics/radarChart2.png)
+
 radarChart ***
 > a radar chart built with CANVAS, fully scalable for any data set (from 3 to n). Next step is to build the same using SVG, to add event handlers.
 <code>[code](https://github.com/graphieros/data-visualisation/blob/master/js/radarChart.js)</code>
